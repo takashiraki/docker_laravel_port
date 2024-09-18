@@ -1,0 +1,7 @@
+.env
+/.devcontainer/devcontainer.json
+
+**/.DS_store
+
+/src/*
+!/src/.gitkeep
