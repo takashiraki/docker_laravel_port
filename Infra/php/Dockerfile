@@ -3,8 +3,8 @@ FROM php:8.3-apache
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && apt-get update \
     && apt-get install -y unzip libpq-dev git vim sqlite3 libsqlite3-dev gh \
-    && pecl install xdebug \
-    && docker-php-ext-enable xdebug \
+    && pecl install xdebug redis \
+    && docker-php-ext-enable xdebug redis \
     && docker-php-ext-install mysqli pdo_mysql opcache \
     && composer global require laravel/installer \
     && (type -p wget >/dev/null || (apt-get update && apt-get install wget -y)) \
